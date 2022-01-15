@@ -18,8 +18,39 @@
                 #f="ngForm"
                 novalidate
               >
+              <!--firstName-->
+              <div class="form-group">
+                <label for="firstName">First name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="firstName"
+                  [(ngModel)]="form.firstName"
+                  required
+                  #firstName="ngModel"
+                />
+                <div class="alert-danger" *ngIf="f.submitted && firstName.invalid">
+                  <div *ngIf="firstName.errors.required">First name is required</div>
+                </div>
+              </div>
+              <!--lastName-->
+              <div class="form-group">
+                <label for="lastName">Last name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="lastName"
+                  [(ngModel)]="form.lastName"
+                  required
+                  #lastName="ngModel"
+                />
+                <div class="alert-danger" *ngIf="f.submitted && lastName.invalid">
+                  <div *ngIf="lastName.errors.required">Last name is required</div>
+                </div>
+              </div>
+              <!--email-->
                 <div class="form-group">
-                  <label for="email">Email3</label>
+                  <label for="email">Email</label>
                   <input
                     type="email"
                     class="form-control"
@@ -36,6 +67,7 @@
                     </div>
                   </div>
                 </div>
+                <!--password-->
                 <div class="form-group">
                   <label for="password">Password</label>
                   <input
@@ -54,6 +86,7 @@
                     </div>
                   </div>
                 </div>
+                <!--button-->
                 <div class="form-group">
                   <button class="btn btn-primary btn-block">Sign Up</button>
                 </div>
