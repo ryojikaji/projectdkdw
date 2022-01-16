@@ -20,6 +20,8 @@ export class AuthService {
     }, {observe: 'response'});
   }
 
+  
+
   register(user): Observable<any> {
     return this.http.post(`${this.apiServerUrl}/register`, {
       email: user.email,

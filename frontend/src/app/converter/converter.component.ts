@@ -23,6 +23,7 @@ export class ConverterComponent implements OnInit {
   isLoggedIn = false;
 
   value: string;
+  askedForUpdate: boolean;
 
   constructor(private currencyService: CurrencyService,
     private tokenStorage: TokenStorageService,
@@ -33,6 +34,15 @@ export class ConverterComponent implements OnInit {
       this.isLoggedIn = true;
       this.getAllCurrency();
     }
+  }
+
+  przekieruj() {
+    this.askedForUpdate = true;
+    this.reloadPage();
+  }
+
+  reloadPage(): void {
+    window.location.reload();
   }
 
   showTable() {

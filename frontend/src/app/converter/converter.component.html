@@ -43,6 +43,11 @@ select {
         <h4 class="panel-title">Currency Converter</h4>
       </div>
       <div class="panel-body">
+
+        <!--zmień dane przycisk-->
+        <p><button id="update" (click)="przekieruj()">update/delete user</button></p>
+        <!--koniec przycisku-->
+
         <form #currencyForm="ngForm" (ngSubmit)="checkMode(currencyForm)" role="form" *ngFor="let allCurrency of allCurrency$" class="form-vertical">
 
           <div class="form-group">
